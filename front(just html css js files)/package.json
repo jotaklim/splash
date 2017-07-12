@@ -1,0 +1,22 @@
+{
+  "name": "some-gulp-project",
+  "author": "Olga Stalska",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-file-include": "^1.1.0",
+    "gulp-fontgen": ">=0",
+    "gulp-iconfont": ">=0",
+    "gulp-imagemin": ">=0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.11",
+    "gulp-webserver": "^0.9.1",
+    "ttf2woff2": ">=0"
+  }
+}

@@ -1,0 +1,46 @@
+//	Grid
+
+.grid-row {
+	@extend %table;
+}
+
+.grid-2,.grid-3,.col-post-2,.col-post-3 {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.grid-2{
+  width: 50%;
+}
+
+.col-post-2{
+  margin-right: 30px;
+  width:calc(50% - 15px);
+  &:nth-child(2n+2){
+    margin-right: 0;
+  }
+  @include r($width-mobile-small){
+    width: 100%;
+    margin-right: 0;
+  }
+}
+.col-post-3{
+  margin-right: 30px;
+  width:calc(33.33% - 20px);
+  &:nth-child(3n+3){
+    margin-right: 0;
+  }
+  @include r($width-tablet-small){
+    width:calc(50% - 15px);
+    &:nth-child(3n+3){
+      margin-right: 30px;
+    }
+    &:nth-child(2n+2){
+      margin-right: 0;
+    }
+  }
+  @include r($width-mobile-small){
+    width: 100%;
+    margin-right: 0;
+  }
+}

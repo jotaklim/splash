@@ -1,0 +1,28 @@
+.wrap-post{
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 800px;
+  max-width: 100%;
+  @include rm($width-screen-widewide){
+    width: 1200px;
+  }
+}
+.img-main{
+  width:calc(100% + 200px);
+  margin-left: -100px;
+  margin-bottom: 50px;
+  img{
+    display: block;
+    width: 100%;
+  }
+  @include rm($width-screen-widewide){
+    width:calc(100% + 300px);
+    margin-left: -150px;
+    margin-bottom: 70px;
+  }
+  @include r($width-tablet-wide){
+    width:calc(100% + 60px);
+    margin-left: -30px;
+  }
+}

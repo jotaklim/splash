@@ -1,0 +1,190 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: splashdev\n"
+"POT-Creation-Date: 2017-07-11 21:50+0300\n"
+"PO-Revision-Date: 2017-07-11 21:58+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.2\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: _e\n"
+"X-Poedit-SearchPath-0: parts\n"
+"X-Poedit-SearchPath-1: .\n"
+
+#: 404.php:4
+msgid "Error 404"
+msgstr "Wählen Sie Ihre Sprache"
+
+#: 404.php:6
+msgid "Sorry, this page doesn't exist"
+msgstr "Entschuldigen Sie, diese Seite existiert nicht"
+
+#: 404.php:8 index.php:84 parts/header-float.php:6 parts/header-float.php:44
+#: parts/section-hero.php:12
+msgid "Contact Us"
+msgstr "Schreiben Sie uns"
+
+#: archive.php:7
+msgid "Blog"
+msgstr "Blog"
+
+#: archive.php:41
+msgid "Load more..."
+msgstr "Weitere Artikel..."
+
+#: index.php:8
+msgid "We offer"
+msgstr "Wir bieten"
+
+#: index.php:19
+msgid "ERP and CRM implementation"
+msgstr "ERP und CRM Implementierung"
+
+#: index.php:21
+msgid ""
+"8 out of 10 companies are currently implementing a business management "
+"software. By bringing SplashDev on board as your implementation services "
+"partner, you ensure your CRM implementation and your ERP implementation are "
+"a success. We help you to determine which is the best CRM or best ERP for "
+"your business and complete implementations of Microsoft Dynamics, Charisma "
+"Business Suite, Salesforce or HubSpot CRM on time and on budget."
+msgstr ""
+"8 von 10 Unternehmen implementieren derzeit eine Business-Management-"
+"Software. Indem Sie SplashDev als Ihren Implementierungspartner an Bord "
+"nehmen, stellen Sie sicher, dass Ihre CRM-Implementierung und Ihre ERP-"
+"Implementierung erfolgreich ablaufen. Wir helfen Ihnen, bei der Auswahl des "
+"besten CRM oder besten ERP für Ihr Unternehmen. Wir erledigen die komplette "
+"Implementierungen für Microsoft Dynamics, Charisma Business Suite oder "
+"Hubspot CRM pünktlich, und budgettreu."
+
+#: index.php:32
+msgid "Project management"
+msgstr "Projektmanagement"
+
+#: index.php:34
+msgid ""
+"Digitalization is the restructuring of a business through the use of digital "
+"technologies. You can only digitalize a business after digitizing its "
+"processes and information sources. SplashDev helps companies in the "
+"financial services and utilities sectors to go digital. Our consultants "
+"translate needs into technical requirements, making sure your investment in "
+"software brings measurable business results."
+msgstr ""
+"Unter dem Schlagwort Digitalisierung versteht man die Umstrukturierung eines "
+"Unternehmens mittels Informationstechnologien Einsatz. Sie können ein "
+"Unternehmen nur digitalisieren, nachdem Sie Prozesse und Informationsquellen "
+"digitalisiert haben. SplashDev hilft Finanzdienstleistungs und "
+"Versorgungsbetrieben digital zu werden. Unsere Berater übersetzen Ihre "
+"Business Anforderungen in technische Anforderungen, um Ihre Software "
+"Investitionen in messbare Geschäftsergebnisse zu verwandeln."
+
+#: index.php:54
+msgid "Software development"
+msgstr "Software-Entwicklung"
+
+#: index.php:56
+msgid ""
+"You have an ERP system or CRM in place and need to connect it to other "
+"applications? You want to reap real benefits from your Microsoft CRM and to "
+"launch an online POS? Or do you need to connect your own web app to "
+"Salesforce services? Our developers can bring to life the custom features "
+"you envision for your business software. Focus on what you do best and let "
+"SplashDev take care of the technology stack."
+msgstr ""
+"Sie verwenden ein ERP-System oder ein CRM-System und nun wollen Sie es mit "
+"anderen Anwendungen verbinden? Wollen Sie echte Vorteile aus Ihrer Microsoft "
+"CRM Applikation erzielen und ein Online-POS starten? Oder müssen Sie eine "
+"eigene Web-App mit Salesforce-Services verbinden? Unsere Entwickler erwecken "
+"Ihre definierten Features zum Leben. Konzentrieren Sie sich auf Ihr "
+"Kerngeschäft und lassen Sie SplashDev den Technologie-Stack übernehmen."
+
+#: index.php:66
+msgid "business development"
+msgstr "geschhäftsfeldentwicklung"
+
+#: index.php:68
+msgid ""
+"If your current challenge is getting more leads and getting better qualified "
+"leads, we can help you. We score leads according to their need for change "
+"and their fit to your business in terms of size, role and industry. We also "
+"offer interim management in the areas of business development, restructuring "
+"and change management."
+msgstr ""
+"Wenn das Generieren von mehreren und besseren qualifizierten Leads Ihre "
+"aktuelle Herausforderung ist, können wir Ihnen helfen. Wir bewerten die "
+"Leads nach ihrer Notwendigkeit für den Geschäftserfolg und ihre Anpassung an "
+"Ihr Unternehmen in Bezug auf Größe, Rolle und Branche. Wir bieten auch "
+"Interim Management in den Bereichen Business Development, Restrukturierung "
+"und Change Management an."
+
+#: index.php:91
+msgid "Partners"
+msgstr "Partner"
+
+#: page-template-aboutus.php:20
+msgid "Meet the team"
+msgstr "Wir freuen uns Ihnen kennen zu lernen"
+
+#: page-template-aboutus.php:37
+msgid "Founder and CEO"
+msgstr "Gründer und CEO"
+
+#: page-template-aboutus.php:48
+msgid "Managing Partner"
+msgstr "Geschäftsführer"
+
+#: page-template-aboutus.php:58
+msgid "Marketing Director"
+msgstr "Marketing Direktor"
+
+#: page-template-archive.php:53
+msgid "Sorry, no posts matched your criteria."
+msgstr "Keine passenden Beiträge gefunden."
+
+#: page-template-landing1.php:18
+msgid "Get Report"
+msgstr "Erhalten den Sie Bericht"
+
+#: page-template-landing2.php:32 parts/modal-contact-landing.php:7
+msgid "GET THE REPORT"
+msgstr "Erhalten den Sie Bericht"
+
+#: page-template-thankyou.php:14
+msgid "Thanks for reaching out!"
+msgstr "Danke für die Benachrichtung!"
+
+#: page-template-thankyou.php:16
+msgid "We will get in touch shortly."
+msgstr "Wir werden uns in Kürze melden."
+
+#: parts/footer-main.php:13
+msgid "Office in Vienna"
+msgstr "Büro in Wien"
+
+#: parts/footer-main.php:19 parts/footer-main.php:29
+msgid "Show on map"
+msgstr "Karte zeigen"
+
+#: parts/footer-main.php:22
+msgid "Office in Bucharest"
+msgstr "Büro in Bukarest"
+
+#: parts/header-float.php:3 parts/header-float.php:25
+msgid "What we do"
+msgstr "Was wir tun"
+
+#: parts/header-float.php:9
+msgid "Choose your language"
+msgstr "Wählen Sie Ihre Sprache"
+
+#: parts/section-hero.php:10
+msgid "Making your business run smoother"
+msgstr "Ihr Geschäft läuft reibungslos ab"
+
+#~ msgid "Get the report"
+#~ msgstr "Erhalten Sie den Bericht"

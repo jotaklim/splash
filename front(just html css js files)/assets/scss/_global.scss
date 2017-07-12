@@ -1,0 +1,510 @@
+//-------------preloader--------------
+.preloader {
+  @extend %fullsizefix;
+  z-index: 99999999;
+  background-color: rgba(#000, .5);
+  visibility: hidden;
+  opacity: 0;
+  transition: all $time;
+
+  &__content {
+    @extend %cam;
+    width: 140px;
+    height: 150px;
+
+    > i {
+      @extend %cam;
+      border: 2px solid $basecolor;
+      border-radius: 50%;
+      &:nth-of-type(1) {
+        width: 25px;
+        height: 25px;
+        border-bottom-color: transparent;
+      }
+      &:nth-of-type(2) {
+        width: 50px;
+        height: 50px;
+        border-right-color: transparent;
+      }
+      &:nth-of-type(3) {
+        width: 75px;
+        height: 75px;
+        border-top-color: transparent;
+      }
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    .preloader__content {
+      > i {
+        animation: preloader-rotate 2s linear infinite;
+        &:nth-of-type(1) {
+          animation-duration: 2s;
+        }
+        &:nth-of-type(2) {
+          animation-duration: 2.5s;
+          animation-direction: reverse;
+        }
+        &:nth-of-type(3) {
+          animation-duration: 3s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes preloader-rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+//---------------end preloader------------------
+
+.wrap{
+  width: 1260px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 0 auto;
+  max-width: 100%;
+  @include rm($width-screen-widewide){
+    width: 1680px;
+  }
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.tac{
+  text-align: center;
+}
+.tal{
+  text-align: left;
+}
+.tar{
+  text-align: right;
+}
+.mb100.mb100{
+  margin-bottom: 100px;
+  @include r($width-screen-small){
+    margin-bottom: 70px;
+  }
+  @include r($width-tablet-small){
+    margin-bottom: 60px;
+  }
+}
+//-----sections-------
+.section-bottom-triang{
+  padding: 110px 0;
+  background: $greybg;
+  position: relative;
+  margin-bottom: 150px;
+  @include rm($width-screen-widewide){
+    padding: 190px 0 170px;
+  }
+  @include r($width-screen-small){
+    padding: 90px 0;
+
+  }
+  @include r($width-tablet-small){
+    padding: 90px 0 70px;
+
+  }
+  &.sect-less-padding{
+    padding: 120px 0 50px;
+    @include rm($width-screen-widewide){
+      padding: 170px 0 80px;
+    }
+    @include r($width-tablet-small){
+      padding-top: 90px;
+    }
+    @include r($width-mobile){
+      padding-top: 80px;
+    }
+  }
+  &:after{
+    @extend %before;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-top-width: 150px;
+    border-right-width: 100vw;
+    border-bottom-width:0;
+    border-left-width: 0;
+    border-color: $greybg transparent transparent transparent;
+  }
+}
+.section-top-triang{
+  padding: 100px 0;
+  background: $greybg;
+  position: relative;
+  margin-top: 150px;
+  @include rm($width-screen-widewide){
+    padding: 120px 0;
+  }
+  @include r($width-screen-small){
+    padding:60px 0;
+
+  }
+  &:after{
+    @extend %before;
+    bottom: 100%;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-bottom-width: 150px;
+    border-left-width: 100vw;
+    border-top-width:0;
+    border-right-width: 0;
+    border-color:  transparent transparent $greybg transparent;
+  }
+}
+
+.section-simple{
+  padding: 70px 0;
+  @include rm($width-screen-widewide){
+    padding: 110px 0 ;
+  }
+  @include r($width-screen-small){
+    padding: 60px 0;
+
+  }
+  @include r($width-mobile-small){
+    padding: 20px 0;
+  }
+
+}
+
+.sb-bg-triangle{
+  position: relative;
+  .wrap,.wrap-post,.tac{
+    position: relative;
+    z-index: 5;
+
+  }
+  &:before{
+    @extend %before;
+    height: 87%;
+    width: 100%;
+    z-index: 1;
+    background: $greybg;
+    top: 0;
+
+  }
+  &:after{
+      z-index: 1;
+      @extend %before;
+      top: 87%;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-top-width: 150px;
+      border-right-width: 100vw;
+      border-bottom-width:0;
+      border-left-width: 0;
+      border-color: $greybg transparent transparent transparent;
+
+  }
+
+}
+.ss-tr-2{
+  position: relative;
+  .wrap,.wrap-post,.tac{
+    position: relative;
+    z-index: 5;
+
+  }
+  &:before{
+    z-index: 1;
+    @extend %before;
+    top: 0%;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-top-width: 150px;
+    border-right-width: 100vw;
+    border-bottom-width:0;
+    border-left-width: 0;
+    border-color: $greybg transparent transparent transparent;
+
+  }
+  &:after{
+    z-index: 1;
+    @extend %before;
+    bottom: 0%;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-bottom-width: 150px;
+    border-left-width: 100vw;
+    border-top-width:0;
+    border-right-width: 0;
+    border-color:  transparent transparent $greybg transparent;
+
+  }
+}
+
+//---------titles------
+.title-2,.title-3,.title-4{
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  line-height: 1.2;
+  &:before{
+    @extend %before;
+    background: $textcolor;
+    @extend %ham;
+    bottom: 0;
+  }
+}
+.title-2{
+  letter-spacing: 8px;
+  font-size: 42px;
+  padding-bottom: 35px;
+  margin-bottom: 50px;
+  @include rm($width-screen-widewide){
+    font-size: 50px;
+    margin-bottom: 70px;
+    padding-bottom: 40px;
+  }
+  @include r($width-screen-small){
+    font-size: 38px;
+    padding-bottom: 32px;
+    margin-bottom: 40px;
+    letter-spacing:4px;
+
+  }
+  @include r($width-tablet-small){
+    font-size: 32px;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+
+  }
+  &:before{
+    height: 4px;
+    width: 90px;
+    @include r($width-screen-small){
+      height: 2px;
+
+    }
+  }
+
+}
+.title-3{
+  letter-spacing: 4px;
+  font-size: 24px;
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+  .subtitle{
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-family:$font-slabo;
+    text-transform: none;
+    color: $textcolor-light2;
+    @include rm($width-screen-widewide){
+      font-size: 24px;
+    }
+  }
+  @include rm($width-screen-widewide){
+    font-size: 32px;
+    margin-bottom: 50px;
+    padding-bottom: 35px;
+  }
+  @include r($width-screen-small){
+    font-size: 21px;
+    padding-bottom: 26px;
+    margin-bottom: 35px;
+
+  }
+  @include r($width-mobile-small){
+    font-size: 18px;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+
+  }
+  &:before{
+    height: 4px;
+    width: 60px;
+    @include r($width-screen-small){
+      height: 2px;
+
+    }
+  }
+
+}
+.title-4{
+  letter-spacing: 4px;
+  font-size: 42px;
+  padding-bottom: 35px;
+
+  text-align: center;
+  text-transform: none;
+  margin-bottom: 50px;
+  @include rm($width-screen-widewide){
+    font-size: 50px;
+    margin-bottom: 70px;
+    padding-bottom: 40px;
+  }
+  @include r($width-screen-small){
+    font-size: 38px;
+    margin-bottom: 40px;
+    letter-spacing:4px;
+
+  }
+  @include r($width-tablet-small){
+    font-size: 32px;
+    margin-bottom: 30px;
+
+  }
+  &:before{
+    height: 4px;
+    width: 90px;
+    @include r($width-screen-small){
+      height: 2px;
+
+    }
+  }
+}
+
+//---------form------
+.inp-row{
+  margin-bottom: 30px;
+  @include rm($width-screen-widewide){
+    margin-bottom: 40px;
+  }
+
+  input,textarea{
+    box-sizing: border-box;
+    padding: 0 15px;
+    font-family:$font;
+    color: $textcolor;
+    width: 100%;
+    height: 50px;
+    font-size: 14px;
+    background: #fff;
+    letter-spacing: 1px;
+    transition: all $time;
+    border: 1px solid $bordercolor;
+    @include placeholder($textcolor,$font);
+    resize: none;
+    @include rm($width-screen-widewide){
+      font-size: 25px;
+      height: 90px;
+      padding: 0 25px;
+    }
+
+    &:focus{
+      border-color: $basecolor;
+      @include placeholder(transparent,$font);
+    }
+  }
+  textarea{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    @include rm($width-screen-widewide){
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+  }
+  &.error{
+    input,textarea,.custom-select{
+      border-color: #ee3a31;
+    }
+  }
+}
+
+  input.wpcf7-not-valid,textarea.wpcf7-not-valid{
+    border-color: #ee3a31;
+  }
+  .wpcf7-response-output{
+    display: none !important;
+  }
+
+.checkbox-wrap{
+  input{
+    display: none;
+  }
+  label{
+    font-size: 14px;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    padding-left: 30px;
+    cursor: pointer;
+    @include rm($width-screen-widewide){
+      font-size: 25px;
+      padding-left: 50px;
+    }
+    &:before{
+      @extend %before;
+      left: 0;
+      @extend %vam;
+      width: 16px;
+      height: 16px;
+      border: 1px solid $bordercolor;
+      transition: all $time;
+      margin-top: -1px;
+      @include rm($width-screen-widewide){
+        width: 26px;
+        height: 26px;
+      }
+    }
+    &:after{
+      font-family: 'icomoon' !important;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      content: "\e906";
+      @extend %vam;
+      font-size: 10px;
+      left: 3px;
+      visibility: hidden;
+      transition: all $time;
+      color: #fff;
+      @include rm($width-screen-widewide){
+        font-size: 18px;
+        left: 5px;
+      }
+    }
+
+
+    &:hover{
+      &:before{
+        border-color: $basecolor;
+      }
+    }
+
+  }
+  input:checked + label{
+    &:before{
+      background: $basecolor;
+      border-color: $basecolor;
+    }
+    &:after{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

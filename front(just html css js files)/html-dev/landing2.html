@@ -1,0 +1,52 @@
+@@include('./modules/html-head.html', {
+  "pageTitle": "SplashDev",
+  "bodyClass": "fixed-header"
+})
+
+<section class="section-landing landing-type1 section-hero" style="background-image: url(assets/img/land-hero.jpg)">
+  <a href="index.html" class="logo"><img src="assets/img/logo-white.png" srcset="assets/img/logo-white.png 1x, assets/img/logo-white@2x.png 2x" alt=""></a>
+  <div class="wrap">
+    <h1 class="hero-title wow fadeInUp" data-wow-delay="1s"><strong>Gartner</strong></h1>
+    <p class="hero-text wow fadeInUp" data-wow-delay="1.1s">
+      Gartner Names SugarCRM A Visionary
+    </p>
+    <a href="" class="btn-white btn-big scroll_to wow fadeInUp" data-wow-delay="1.4s" data-href="contact_form">Get Report</a>
+
+  </div>
+</section>
+<section class="section-blog" data-id="contact_form">
+  <div class="wrap">
+    <form class="form-contact-big" action="">
+      <div class="title-3">GET THE GARTNER REPORT</div>
+      <div class="grid-row">
+        <div class="grid-2">
+          <div class="inp-row">
+            <input type="text" placeholder="Your name">
+          </div>
+
+        </div>
+        <div class="grid-2">
+          <div class="inp-row">
+            <input type="email" placeholder="Your professional email">
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="inp-row">
+            <div class="checkbox-wrap">
+              <input type="checkbox" id="addmailing">
+              <label for="addmailing">Please add me to your mailing</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tac">
+        <button class="btn-basecolor  btn-middle">Get Report</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+
+
+@@include('./modules/html-footer.html')

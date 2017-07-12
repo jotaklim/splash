@@ -1,0 +1,371 @@
+.text-format{
+  font-family:$font-slabo;
+  .title-4{
+    margin-bottom: 50px;
+    @include rm($width-screen-widewide){
+
+      margin-bottom: 70px;
+
+    }
+    @include r($width-screen-small){
+
+      margin-bottom: 60px;
+
+
+    }
+    @include r($width-tablet-small){
+
+      margin-bottom: 50px;
+
+    }
+  }
+  strong{
+    font-weight: 600;
+  }
+  a{
+    color: inherit;
+    text-shadow:
+            -1px -1px white,
+            -1px 1px white,
+            1px -1px white,
+            1px 1px white;
+
+    box-shadow:
+            inset 0 -0.175em white,
+            inset 0 -0.2em $textcolor;
+    transition: all $time;
+    &:hover{
+      box-shadow:
+              inset 0 -0.175em white,
+              inset 0 -0.2em $basecolor;
+    }
+  }
+  p,ul,ol,address{
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    @include rm($width-screen-widewide){
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+    @include r($width-screen-small){
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+  }
+
+  h1,h2,h3,h4,h5,h6{
+    font-weight: 600;
+    letter-spacing: 4px;
+    font-size: 42px;
+    margin-top: 50px;
+    text-transform: none;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    @include rm($width-screen-widewide){
+      font-size: 50px;
+      margin-bottom: 30px;
+    }
+    @include r($width-screen-small){
+      font-size: 38px;
+    }
+    @include r($width-tablet-small){
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+    &:first-child{
+      margin-top: 0;
+    }
+
+  }
+  h2{
+    font-size: 36px;
+    @include rm($width-screen-widewide){
+      font-size: 42px;
+    }
+    @include r($width-screen-small){
+      font-size: 32px;
+    }
+    @include r($width-tablet-small){
+      font-size: 28px;
+    }
+  }
+  h3{
+    font-size: 32px;
+    @include rm($width-screen-widewide){
+      font-size: 38px;
+    }
+    @include r($width-screen-small){
+      font-size: 28px;
+    }
+    @include r($width-tablet-small){
+      font-size: 26px;
+    }
+  }
+  h4{
+    font-size: 28px;
+    letter-spacing:3px;
+    @include rm($width-screen-widewide){
+      font-size: 36px;
+    }
+    @include r($width-screen-small){
+      font-size: 26px;
+    }
+    @include r($width-tablet-small){
+      font-size: 24px;
+    }
+  }
+  h5{
+    font-size: 24px;
+    margin-bottom: 30px;
+    letter-spacing:3px;
+    @include rm($width-screen-widewide){
+      font-size: 34px;
+    }
+    @include r($width-screen-small){
+      font-size: 22px;
+    }
+    @include r($width-tablet-small){
+      font-size: 20px;
+    }
+  }
+  h6{
+    font-size: 22px;
+    margin-bottom: 30px;
+    letter-spacing:2px;
+    @include rm($width-screen-widewide){
+      font-size: 32px;
+    }
+    @include r($width-screen-small){
+      font-size: 18px;
+    }
+    @include r($width-tablet-small){
+      font-size: 26px;
+    }
+  }
+
+  .aligncenter{
+    margin: 50px auto;
+    max-width: 90%;
+    display: block;
+    clear: both;
+    @include rm($width-screen-widewide){
+      margin: 80px auto;
+    }
+  }
+
+  ul {
+    padding-left: 40px;
+    @include r($width-mobile){
+      padding-left: 0;
+    }
+    li {
+      margin: 0 0 10px 0;
+      padding-left: 24px;
+      position: relative;
+      @include rm($width-screen-widewide){
+        margin-bottom: 15px;
+      }
+      &:before {
+        @extend %before;
+        width: 6px;
+        height: 6px;
+        border: solid 2px $basecolor;
+        margin: 10px 0 0 0;
+        left: 0;
+        border-radius: 50%;
+        @include rm($width-screen-widewide){
+          margin-top: 18px;
+          border-width: 3px;
+        }
+        @include r($width-screen-small){
+          margin-top: 8px;
+        }
+
+
+      }
+    }
+  }
+  ol {
+    padding-left: 40px;
+    @include r($width-mobile){
+      padding-left: 0;
+    }
+    li {
+      margin: 0 0 10px 0;
+      padding-left: 24px;
+      position: relative;
+      counter-increment: step-counter;
+      &:before {
+        content: counter(step-counter);
+        display: block;
+        font-weight: 600;
+        color:$basecolor;
+        position: absolute;
+        margin: 0;
+        left: 0;
+        margin-top: -1px;
+      }
+    }
+  }
+  table {
+
+    width: 100%;
+    box-sizing: border-box;
+    table-layout: auto;
+    border-collapse: collapse;
+
+    td, th {
+      border: solid 1px $bordercolor;
+      padding: 20px 15px;
+      vertical-align: middle;
+      font-size: 15px;
+      line-height: 1.3;
+      @include rm($width-screen-widewide){
+        font-size: 24px;
+        padding: 25px 20px;
+      }
+
+    }
+
+    thead td , thead th{
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+  .wp-caption {
+    margin: 0 0 25px 0;
+    position: relative;
+    @include rm($width-screen-widewide){
+      margin-bottom: 30px;
+    }
+    img{
+      display: block;
+    }
+    .wp-caption-text {
+      margin: 0;
+      width: 100%;
+      padding: 16px 20px;
+      background-color: rgba(255, 255, 255, 0.5);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  .alignright{
+    float: right;
+    margin: 30px 0 30px 30px;
+    max-width: 100%;
+    @include rm($width-screen-widewide){
+      margin:50px 0 50px 50px;
+    }
+    img{
+      width: 100%;
+    }
+  }
+  .alignleft{
+    float: left;
+    margin: 30px 30px 30px 0 ;
+    max-width: 100%;
+    @include rm($width-screen-widewide){
+      margin: 50px 50px 50px 0;
+    }
+    img{
+      width: 100%;
+    }
+  }
+
+  .alignnone{
+    max-width: 100%;
+    img{
+      width: 100%;
+    }
+  }
+  blockquote {
+
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 40px 50px 0 0;
+    margin: 30px auto ;
+    max-width: 80%;
+    position: relative;
+    @include rm($width-screen-widewide){
+      font-size: 28px;
+    }
+    @include r($width-mobile){
+      max-width: 100%;
+      padding-right: 0;
+    }
+    p{
+      margin-bottom: 15px;
+    }
+
+    &:before {
+      @extend %before;
+      content: '\201c';
+      font-weight: 600;
+      font-size: 60px;
+      color: $basecolor;
+      position: absolute;
+      top: -10px;
+      left: 0;
+    }
+  }
+
+
+  // elements children p font size
+  blockquote , blockquote, ul , ol , li , table , .wp-caption, p {
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  blockquote p, blockquote, ul p, ol p, table p, .wp-caption p {
+    font-size: 18px;
+    @include rm($width-screen-widewide){
+      font-size: 28px;
+    }
+
+  }
+  blockquote:after {
+    content: '.';
+    display:block;overflow:hidden;visibility:hidden;font-size:0;line-height:0;width:0;height:0;
+    clear: both;
+  }
+
+  blockquote{
+    footer{
+      background: transparent;
+      min-height: 0;
+      font-size: 16px;
+      @include rm($width-screen-widewide){
+        font-size: 21px;
+      }
+      br{
+        display: none;
+      }
+    }
+  }
+
+
+
+  p, ol, ul, blockquote,address,li{
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  &.text-format-page{
+    p{
+      font-size: 24px;
+      @include r($width-tablet-small){
+        font-size: 21px;
+      }
+      @include r($width-mobile){
+        font-size: 18px;
+      }
+    }
+
+  }
+}

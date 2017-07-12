@@ -1,0 +1,143 @@
+//---------------btns------------------
+.btn-basecolor{
+  background: #fff;
+}
+.btn-basecolor, .btn-white{
+  @extend %btn;
+
+  border: 2px solid $basecolor;
+  //text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: $basecolor;
+  border-radius: 23px;
+  padding: 15px 35px;
+  min-width: 150px;
+  overflow: hidden;
+  /* this fixes the overflow:hidden in Chrome */
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+  @include rm($width-screen-widewide){
+    font-size: 18px;
+    padding: 25px 45px;
+    border-radius: 35px;
+    border-width: 3px;
+  }
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 100%;
+    background: $basecolor;
+    z-index: -1;
+    -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transition: -webkit-transform 0.35s, opacity 0.35s, background-color 0.35s;
+    transition: transform 0.35s, opacity 0.35s, background-color 0.35s;
+  }
+  &:hover{
+    box-shadow: 0 5px 15px 0 rgba($basecolor,.2);
+    color: #fff;
+    &:before{
+
+      opacity: 1;
+      background-color: $basecolor;
+      -webkit-transform: rotate3d(0, 0, 1, 0deg);
+      transform: rotate3d(0, 0, 1, 0deg);
+      -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+      transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    }
+  }
+  &.btn-big{
+    font-size: 21px;
+    letter-spacing: 4px;
+    padding: 25px 45px;
+    border-radius: 40px;
+
+    @include rm($width-screen-widewide){
+      font-size: 36px;
+      padding: 37px 70px;
+      border-radius: 61px;
+      border-width: 3px;
+    }
+    @include r($width-mobile){
+      padding: 20px 40px;
+      font-size: 18px;
+    }
+    @include r($width-mobile-small){
+      font-size: 16px;
+      padding: 15px 30px;
+    }
+  }
+  &.btn-middle{
+    font-size: 18px;
+    letter-spacing: 3px;
+    padding: 16px 30px;
+
+    border-radius: 28px;
+    @include rm($width-screen-widewide){
+      font-size: 24px;
+      padding: 23px 60px;
+      border-radius: 38px;
+      border-width: 3px;
+    }
+  }
+}
+.btn-white{
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  &:before{
+    background: #fff !important;
+  }
+  &:hover{
+    background: #fff !important;
+    color: $textcolor;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,.5);
+  }
+}
+
+//---------------icons--------------------
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-location:before {
+  content: "\e900";
+}
+.icon-chev_down:before {
+  content: "\e901";
+}
+.icon-chev_left:before {
+  content: "\e902";
+}
+.icon-chev_right:before {
+  content: "\e903";
+}
+.icon-chev_top:before {
+  content: "\e904";
+}
+.icon-linkedin:before {
+  content: "\e905";
+}
+.icon-check:before {
+  content: "\e906";
+}
+
+

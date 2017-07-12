@@ -1,0 +1,83 @@
+//----browsers-----
+.Explorer{
+  .map-link{
+    &:hover{
+      text-decoration: underline;
+    }
+    &:before{
+      display: none;
+    }
+  }
+
+  .post-excerpt {
+    .post-excerpt-title{
+      a{
+        text-shadow: none;
+        box-shadow: none;
+        &:hover{
+          text-decoration: underline;
+        }
+
+      }
+    }
+  }
+  .contact-inf{
+    a{
+      transition: all $time;
+      &:hover{
+        color: $basecolor;
+      }
+      &:before{
+        display: none;
+      }
+    }
+  }
+  .text-format{
+    a{
+      text-shadow: none;
+      box-shadow: none;
+      text-decoration: underline;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.desktop{
+  .mainheader{
+    .phone-num{
+      pointer-events: none;
+    }
+  }
+  .address-col{
+    .foot-tel{
+      pointer-events: none;
+    }
+  }
+  //.contact-tel{
+  //  pointer-events: none;
+  //}
+}
+.mobile{
+  .section-hero{
+    background-attachment: scroll;
+  }
+  .inp-row-btn {
+    input{
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .btn-inline{
+      text-indent: 0px;
+      width: 100%;
+      &:before{
+        transform:translate(0,-50%);
+        display: none;
+      }
+    }
+  }
+}
+//------responsive--------

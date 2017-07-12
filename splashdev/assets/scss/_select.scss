@@ -1,0 +1,125 @@
+.custom-select{
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+  z-index: 10;
+  position: relative;
+  box-sizing:border-box;
+  width: 100%;
+  padding-right: 30px;
+  border: 1px solid $bordercolor;
+  .current-value{
+    box-sizing: border-box;
+    padding: 16px 15px;
+    font-family:$font;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    color: $textcolor;
+    width: 100%;
+    height: 48px;
+    font-size: 14px;
+    background: #fff;
+    letter-spacing: 1px;
+    transition: all $time;
+    text-align: left;
+    @extend %text-truncate;
+
+    @include placeholder($textcolor,$font);
+    resize: none;
+    @include rm($width-screen-widewide){
+      font-size: 25px;
+      height: 88px;
+      padding: 32px 25px;
+    }
+
+    cursor: pointer;
+    &:before{
+      @extend %before;
+      @extend %vam;
+      right: 15px;
+      @include arr(10,6,$basecolor,b);
+      transition: all $time;
+    }
+    &.active{
+      &:before{
+        @include arr(10,6,$basecolor,t);
+      }
+    }
+    &.active+.list-values {
+      margin-top: 1px;
+      visibility: visible;
+      opacity: 1;
+
+    }
+  }
+  .list-values{
+    display: block;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 100%;
+
+    margin-top: 20px;
+    visibility: hidden;
+    width:calc(100% + 2px);
+    margin-left: -1px;
+    box-sizing:border-box;
+    background: #fff;
+    opacity: 1;
+    transition:all $time;
+    border: 1px solid $bordercolor;
+    border-top:none;
+    a{
+      display: block;
+      color: inherit;
+      transition: color $time;
+      padding: 17px 15px;
+      letter-spacing: 1px;
+
+      border-bottom:1px solid $bordercolor;
+      font-size: 14px;
+
+      &:hover{
+        color: $basecolor;
+      }
+      @include rm($width-screen-widewide){
+        font-size: 25px;
+        padding: 33px 25px;
+      }
+      &:last-child{
+        border-bottom:none;
+      }
+      &.current{
+        display: none;
+      }
+    }
+  }
+
+  &.animation-1{
+    .list-values{
+
+      a{
+        position: relative;
+        &:nth-child(2n+2){
+          right: -10px;
+        }
+        &:nth-child(2n+1){
+          left: -10px;
+        }
+      }
+    }
+    .current-value.active+.list-values {
+      a{
+        &:nth-child(2n+2){
+          right: 0;
+        }
+        &:nth-child(2n+1){
+          left: 0;
+        }
+      }
+    }
+
+  }
+
+}

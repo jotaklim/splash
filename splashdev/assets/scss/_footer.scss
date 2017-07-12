@@ -1,0 +1,121 @@
+.mainfooter{
+  padding: 50px 0 40px;
+  background: #222;
+  color: #fff;
+  @include r($width-mobile){
+    font-size: 0;
+    .fl,.fr{
+      float: none;
+    }
+  }
+
+}
+
+.address-col{
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 60px;
+  @include r($width-mobile){
+    width:calc(50% - 15px);
+    margin-right: 30px;
+  }
+  &:last-child{
+    margin-right: 0;
+  }
+  .ac-title{
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: .9;
+    margin-bottom: 15px;
+    font-weight: 600;
+    @include rm($width-screen-widewide){
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    @include r($width-mobile-small){
+      font-size: 10px;
+      margin-bottom: 10px;
+    }
+
+  }
+  address{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    @include rm($width-screen-widewide){
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    @include r($width-mobile-small){
+      font-size: 12px;
+    }
+  }
+  .map-link{
+    color: #fff;
+    font-size: 12px;
+    font-weight: 300;
+    @include hoverFromCenter(#fff,-2,1);
+    position: relative;
+    margin-left: 20px;
+    @include rm($width-screen-widewide){
+      font-size: 16px;
+      margin-left: 25px;
+    }
+    .icon-location{
+      position: absolute;
+      left: -20px;
+      @extend %vam;
+      color: $basecolor;
+      font-size: 15px;
+      margin-top: -2px;
+      @include rm($width-screen-widewide){
+        left: -25px;
+        font-size: 18px;
+        margin-top: -1px;
+      }
+    }
+  }
+
+}
+.socials-list{
+  font-size: 0;
+  @include r($width-mobile){
+    margin-top: 30px;
+    text-align: center;
+  }
+  .soc-item{
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    position: relative;
+    &.icon-linkedin{
+      border: 2px solid $linkedincolor;
+      &:before{
+        margin-top: -1px;
+      }
+    }
+
+
+    transition: all $time;
+
+    &:before{
+      @extend %cam;
+      color: #fff;
+      font-size: 18px;
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+    &:hover{
+      &.icon-linkedin{
+        background: $linkedincolor;
+
+        }
+      }
+  }
+}

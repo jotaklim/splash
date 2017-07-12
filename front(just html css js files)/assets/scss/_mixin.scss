@@ -1,0 +1,286 @@
+@mixin clearfix {
+    zoom: 1;
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+}
+
+//-----------gradient---------------
+@mixin background-gradient($start-color, $end-color, $orientation) {
+    background: $start-color;
+
+    @if $orientation == 'vertical' {
+        background: -webkit-linear-gradient(top, $start-color, $end-color);
+        background: linear-gradient(to bottom, $start-color, $end-color);
+    } @else if $orientation == 'horizontal' {
+        background: -webkit-linear-gradient(left, $start-color, $end-color);
+        background: linear-gradient(to right, $start-color, $end-color);
+    } @else {
+        background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+        background: radial-gradient(ellipse at center, $start-color, $end-color);
+    }
+}
+
+//-------------font face--------------------
+@mixin font-face($font-name, $file-name) {
+    @font-face {
+        font-family: quote($font-name);
+        src: url('../fonts/'+ $file-name + '.eot');
+        src: url('../fonts/'+ $file-name + '.eot?#iefix') format('embedded-opentype'),
+        //url('../fonts/'+ $file-name + '.woff') format('woff'),
+        url('../fonts/'+ $file-name + '.ttf') format('truetype'),
+        url('../fonts/'+ $file-name + '.svg##{$font-name}') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+//-------------input placeholder---------------------
+@mixin placeholder($color, $font) {
+    &::-webkit-input-placeholder {
+        color: $color;
+        font-family: $font;
+    }
+    &::-moz-placeholder {
+        color: $color;
+        font-family: $font;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+        font-family: $font;
+    }
+    &:-moz-placeholder {
+        color: $color;
+        font-family: $font;
+    }
+}
+@mixin placeholder-star($color) {
+    &::-webkit-input-placeholder:after {
+        color: $color;
+        content: "*";
+        opacity: 1;
+        margin-left: 3px;
+    }
+    &::-moz-input-placeholder:after {
+        color: $color;
+        content: "*";
+        opacity: 1;
+        margin-left: 3px;
+    }
+    &::-ms-input-placeholder:after {
+        color: $color;
+        content: "*";
+        opacity: 1;
+        margin-left: 3px;
+    }
+    &::input-placeholder:after {
+        color: $color;
+        content: "*";
+        opacity: 1;
+        margin-left: 3px;
+    }
+}
+@function em($px, $context: 14) {
+  @return ($px / $context) * 1em;
+}
+@mixin columns($count, $gap) {
+    -webkit-column-count: $count;
+    -moz-column-count: $count;
+    column-count: $count;
+
+    -webkit-column-gap: $gap;
+    -moz-column-gap: $gap;
+    column-gap: $gap;
+}
+
+//----------------------------------
+@mixin gray {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+    // Firefox 10+
+    filter: gray;
+    // IE6-9
+    -webkit-filter: grayscale(100%);
+    // Chrome 19+ & Safari 6+;
+    filter: progid:DXImageTransform.Microsoft.BasicImage(grayScale = 1);
+    -ms-filter:progid:DXImageTransform.Microsoft.BasicImage(grayScale=1);
+}
+
+@mixin gray-half {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='saturate' values='0.5'/></filter></svg>#grayscale");
+    // Firefox 10+
+    filter: gray alpha(opacity=50);
+    // IE6-9
+    -webkit-filter: grayscale(50%);
+    // Chrome 19+ & Safari 6+
+  filter: progid:DXImageTransform.Microsoft.BasicImage(grayScale = 0.5);
+  -ms-filter:progid:DXImageTransform.Microsoft.BasicImage(grayScale=0.5);
+}
+
+@mixin gray-zero {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0'/></filter></svg>#grayscale");
+    -webkit-filter: grayscale(0%);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(grayScale = 0);
+  -ms-filter:progid:DXImageTransform.Microsoft.BasicImage(grayScale=0);
+}
+
+//---------------no select------------------------
+@mixin unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+//------------font-smoothing-------------------
+@mixin font-smoothing($val: antialiased) {
+    -webkit-font-smoothing: $val;
+    -moz-font-smoothing: $val;
+    -ms-font-smoothing: $val;
+    -o-font-smoothing: $val;
+}
+
+//-----------------arrow------------------------
+@mixin arr($width, $height, $bg, $direction) {
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    @if $direction == t {
+        border-width: 0 $width / 2 + px $height + px $width / 2 + px;
+        border-color: transparent transparent $bg transparent;
+    }
+
+    @if $direction == r {
+        border-width: $height / 2 + px 0 $height / 2 + px $width + px;
+        border-color: transparent transparent transparent $bg;
+    }
+
+    @if $direction == b {
+        border-width: $height + px $width / 2 + px 0 $width / 2 + px;
+        border-color: $bg transparent transparent transparent;
+    }
+
+    @if $direction == l {
+        border-width: $height / 2 + px $width + px $height / 2 + px 0;
+        border-color: transparent $bg transparent transparent;
+    }
+
+    @if $direction == tl {
+        border-width: $height + px $width + px 0 0;
+        border-color: $bg transparent transparent transparent;
+    }
+
+    @if $direction == tr {
+        border-width: 0 $width + px $height + px 0;
+        border-color: transparent $bg transparent transparent;
+    }
+
+    @if $direction == br {
+        border-width: 0 0 $height + px $width + px;
+        border-color: transparent transparent $bg transparent;
+    }
+
+    @if $direction == bl {
+        border-width: $width + px 0 0 $height + px;
+        border-color: transparent transparent transparent $bg;
+    }
+
+    // example
+    // +arr(500,50, #000, l)
+    // +arr(500,50, #000, bl)
+}
+
+//---------------images-----------------------
+
+@mixin pic($name) {
+    background: url("../img/#{$name}") no-repeat 0 0;
+}
+
+@mixin png($name) {
+    background: url("../img/#{$name}.png") no-repeat 0 0;
+}
+
+@mixin jpg($name) {
+    background: url("../img/#{$name}.jpg") no-repeat 0 0;
+}
+
+@mixin svg($name, $width, $height) {
+    background: url("../img/svg/#{$name}.svg") no-repeat 0 0;
+    background-size: #{$width}px #{$height}px;
+    width: #{$width}px;
+    height: #{$height}px;
+    display: inline-block;
+}
+//-------------icons font--------------------------
+@mixin fontello {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+//-----------------media------------------------
+// width
+@mixin r($width) {
+    @media only screen and (max-width: $width+ "px") {
+        @content
+    }
+
+}
+
+@mixin rm($width) {
+    @media only screen and (min-width: $width+ "px") {
+        @content
+    }
+
+}
+
+@mixin rmm($width1,$width2) {
+    @media only screen and (min-width: $width1+ "px") and (max-width:$width2+"px") {
+        @content
+    }
+
+}
+
+// height
+@mixin rh($height) {
+    @media only screen and (max-height: $height + "px") {
+        @content
+    }
+
+}
+
+
+
+//----------hovers---------------
+
+@mixin hoverFromCenter($color,$bottomGap,$lineWidth){
+    position: relative;
+    &:before{
+        @extend %before;
+        @extend %ham;
+        bottom: $bottomGap+px;
+        width: 0;
+        height: $lineWidth+px;
+        background: $color;
+        transition: all $time;
+        opacity: 0;
+    }
+    &:hover{
+        &:before{
+            opacity: 1;
+            width: 100%;
+        }
+    }
+}
